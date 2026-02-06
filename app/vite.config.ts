@@ -4,8 +4,9 @@ import { defineConfig } from "vite"
 import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
+// For GitHub Pages: use your repo name. If repo is "Valentine", base is '/Valentine/'
 export default defineConfig({
-  base: './',
+  base: process.env.NODE_ENV === 'production' ? '/Valentine/' : './',
   plugins: [inspectAttr(), react()],
   resolve: {
     alias: {
